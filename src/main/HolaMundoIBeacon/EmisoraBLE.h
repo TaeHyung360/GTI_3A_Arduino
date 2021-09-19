@@ -332,6 +332,7 @@ public:
   * servicioEnEmisora, Texto -> anyadirServicioConSusCaracteristicas() -> VoF
   * 
   * @param clase servicioEnEmisora
+  * @param texto
   * @param devulve VoF 
   */
   template <typename ... T>
@@ -349,6 +350,7 @@ public:
   * servicioEnEmisora, Texto -> anyadirServicioConSusCaracteristicasYActivar() -> VoF
   * 
   * @param clase servicioEnEmisora
+  * @param texto
   * @param devulve VoF 
   */
   template <typename ... T>

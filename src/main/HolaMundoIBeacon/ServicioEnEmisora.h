@@ -94,13 +94,13 @@ public:
 	// .........................................................
   /**
    * Cosntructor Caracteristica
-   * nombreCaracteristica: texto, props: , permisoRead: , permisoWrite: , tam: N -> constructor()
+   * nombreCaracteristica: texto, props: N, permisoRead: BleSecurityMode, permisoWrite: BleSecurityMode, tam: N -> constructor()
    * 
-   * @param 
-   * @param 
-   * @param 
-   * @param 
-   * @param 
+   * @param nombreCaracteristica texto 
+   * @param props N
+   * @param permisoRead BleSecurityMode
+   * @param permisoWrite BleSecurityMode
+   * @param tam N
    */
 	Caracteristica( const char * nombreCaracteristica_ ,
 					uint8_t props,
@@ -118,9 +118,9 @@ public:
 	// CHR_PROPS_WRITE , CHR_PROPS_READ ,  CHR_PROPS_NOTIFY 
 	// .........................................................
   /**
-   * props: T -> asignarPropiedades()
+   * props: n -> asignarPropiedades()
    * 
-   * @param props
+   * @param props N
    */
 	void asignarPropiedades ( uint8_t props ) {
 	  // no puedo escribir AUN si el constructor llama a esto: Serial.println( " laCaracteristica.setProperties( props ); ");
@@ -131,10 +131,10 @@ public:
 	// BleSecurityMode::SECMODE_OPEN  , BleSecurityMode::SECMODE_NO_ACCESS
 	// .........................................................
   /**
-   * permisoRead: , permisoWrite:  -> asignarPermisos()
+   * permisoRead: BleSecurityMode, permisoWrite: BleSecurityMode -> asignarPermisos()
    * 
-   * @param permisoRead
-   * @param permisoWrite
+   * @param permisoRead BleSecurityMode
+   * @param permisoWrite BleSecurityMode
    */
 	void asignarPermisos( BleSecurityMode permisoRead, BleSecurityMode permisoWrite ) {
 	  // no puedo escribir AUN si el constructor llama a esto: Serial.println( "laCaracteristica.setPermission( permisoRead, permisoWrite ); " );
@@ -159,13 +159,13 @@ public:
 	// .........................................................
 	// .........................................................
   /**
-   * nombreCaracteristica: texto, props: , permisoRead: , permisoWrite: , tam: N -> asignarPropiedadesPermisosYTamanyoDatos()
+   * nombreCaracteristica: texto, props: N, permisoRead: BleSecurityMode, permisoWrite: BleSecurityMode, tam: N -> asignarPropiedadesPermisosYTamanyoDatos()
    * 
-   * @param nombreCaracteristica
-   * @param props
-   * @param permisoRead
-   * @param permisoWrite
-   * @param tam
+   * @param nombreCaracteristica texto 
+   * @param props N
+   * @param permisoRead BleSecurityMode
+   * @param permisoWrite BleSecurityMode
+   * @param tam N
   */
 	void asignarPropiedadesPermisosYTamanyoDatos( uint8_t props,
 												 BleSecurityMode permisoRead,
@@ -180,10 +180,10 @@ public:
 	// .........................................................
 	// .........................................................
   /**
-   * str: texto -> escribirDatos() -> r: [Texto]
+   * str: texto -> escribirDatos() -> r: N
    * 
-   * @param str
-   * @param r
+   * @param str de tipo texto
+   * @param r 
   */
 	uint16_t escribirDatos( const char * str ) {
 	  // Serial.print( " return (*this).laCaracteristica.write( str  = " );
@@ -199,9 +199,9 @@ public:
 	// .........................................................
 	// .........................................................
   /**
-   * str: texto -> notificarDatos() -> r: [Texto]
+   * str: texto -> notificarDatos() -> r: N
    * 
-   * @param texto
+   * @param str de tipo texto
    * @param r
   */
 	uint16_t notificarDatos( const char * str ) {
