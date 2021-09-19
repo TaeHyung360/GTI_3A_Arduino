@@ -295,7 +295,7 @@ public:
   /**
   * servicioEnEmisora -> anyadirServicio() -> VoF
   * 
-  * @param servicioEnEmisora, contiene el contenido a enviar
+  * @param clase servicioEnEmisora
   * @param devulve VoF 
   */
   bool anyadirServicio( ServicioEnEmisora & servicio ) {
@@ -320,7 +320,7 @@ public:
   /**
   * servicioEnEmisora -> anyadirServicioConSusCaracteristicas() -> VoF
   * 
-  * @param servicioEnEmisora, contiene el contenido a enviar
+  * @param clase servicioEnEmisora
   * @param devulve VoF 
   */
   bool anyadirServicioConSusCaracteristicas( ServicioEnEmisora & servicio ) { 
@@ -331,7 +331,7 @@ public:
   /**
   * servicioEnEmisora, Texto -> anyadirServicioConSusCaracteristicas() -> VoF
   * 
-  * @param servicioEnEmisora, contiene el contenido a enviar
+  * @param clase servicioEnEmisora
   * @param devulve VoF 
   */
   template <typename ... T>
@@ -348,7 +348,7 @@ public:
   /**
   * servicioEnEmisora, Texto -> anyadirServicioConSusCaracteristicasYActivar() -> VoF
   * 
-  * @param servicioEnEmisora, contiene el contenido a enviar
+  * @param clase servicioEnEmisora
   * @param devulve VoF 
   */
   template <typename ... T>
