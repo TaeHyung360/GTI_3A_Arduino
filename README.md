@@ -57,7 +57,7 @@ GTI-3A-JuanFerreraSala
 
 _Las herramientas que utilize para crear este proyecto_
 
-* [Arduino](https://www.arduino.cc/) - El framework web usado
+* [Arduino](https://www.arduino.cc/)
 
 
 ---
