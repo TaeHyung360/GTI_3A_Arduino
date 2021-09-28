@@ -11,12 +11,15 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 _Que cosas necesitas para instalar el software y como instalarlas_
 
+_Primero vas a tener que descargar el programa Arduino, podrás hacerlo en este enlace:_
 ```
-Primero vas a tener que descargar el programa Arduino, podrás hacerlo en este enlace: https://www.arduino.cc/
-Posteriormente tendrás que seguir estos pasos para instalar todas las bibliotecas de la placa nRF52840: https://learn.sparkfun.com/tutorials/nrf52840-development-with-arduino-and-circuitpython
-Todo esto tendras que instalarlo si no lo tienes.
+https://www.arduino.cc/
 ```
-
+_Posteriormente tendrás que seguir estos pasos para instalar todas las bibliotecas de la placa nRF52840:_
+```
+https://learn.sparkfun.com/tutorials/nrf52840-development-with-arduino-and-circuitpython
+```
+_Todo esto tendras que instalarlo si no lo tienes._
 ### Instalación 🔧
 
 _Una vez descargado este repositorio dirígete a la siguiente ruta._
