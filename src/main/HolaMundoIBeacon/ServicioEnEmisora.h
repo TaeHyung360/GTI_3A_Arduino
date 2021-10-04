@@ -94,18 +94,18 @@ public:
 	// .........................................................
   /**
    * Cosntructor Caracteristica
-   * nombreCaracteristica: texto, props: N, permisoRead: BleSecurityMode, permisoWrite: BleSecurityMode, tam: N -> constructor()
+   * nombreCaracteristica: texto, props: N, permisoRead: SecureMode_t, permisoWrite: SecureMode_t, tam: N -> constructor()
    * 
    * @param nombreCaracteristica texto 
    * @param props N
-   * @param permisoRead BleSecurityMode
-   * @param permisoWrite BleSecurityMode
+   * @param permisoRead SecureMode_t
+   * @param permisoWrite SecureMode_t
    * @param tam N
    */
 	Caracteristica( const char * nombreCaracteristica_ ,
 					uint8_t props,
-					BleSecurityMode permisoRead,
-					BleSecurityMode permisoWrite, 
+					SecureMode_t permisoRead,
+					SecureMode_t permisoWrite, 
 					uint8_t tam ) 
 	  :
 	  Caracteristica( nombreCaracteristica_ ) // llamada al otro constructor
@@ -128,15 +128,15 @@ public:
 	} // ()
 
 	// .........................................................
-	// BleSecurityMode::SECMODE_OPEN  , BleSecurityMode::SECMODE_NO_ACCESS
+	// SecureMode_t::SECMODE_OPEN  , SecureMode_t::SECMODE_NO_ACCESS
 	// .........................................................
   /**
-   * permisoRead: BleSecurityMode, permisoWrite: BleSecurityMode -> asignarPermisos()
+   * permisoRead: SecureMode_t, permisoWrite: SecureMode_t -> asignarPermisos()
    * 
-   * @param permisoRead BleSecurityMode
-   * @param permisoWrite BleSecurityMode
+   * @param permisoRead SecureMode_t
+   * @param permisoWrite SecureMode_t
    */
-	void asignarPermisos( BleSecurityMode permisoRead, BleSecurityMode permisoWrite ) {
+	void asignarPermisos( SecureMode_t permisoRead, SecureMode_t permisoWrite ) {
 	  // no puedo escribir AUN si el constructor llama a esto: Serial.println( "laCaracteristica.setPermission( permisoRead, permisoWrite ); " );
 	  (*this).laCaracteristica.setPermission( permisoRead, permisoWrite );
 	} // ()
@@ -159,17 +159,17 @@ public:
 	// .........................................................
 	// .........................................................
   /**
-   * nombreCaracteristica: texto, props: N, permisoRead: BleSecurityMode, permisoWrite: BleSecurityMode, tam: N -> asignarPropiedadesPermisosYTamanyoDatos()
+   * nombreCaracteristica: texto, props: N, permisoRead: SecureMode_t, permisoWrite: SecureMode_t, tam: N -> asignarPropiedadesPermisosYTamanyoDatos()
    * 
    * @param nombreCaracteristica texto 
    * @param props N
-   * @param permisoRead BleSecurityMode
-   * @param permisoWrite BleSecurityMode
+   * @param permisoRead SecureMode_t
+   * @param permisoWrite SecureMode_t
    * @param tam N
   */
 	void asignarPropiedadesPermisosYTamanyoDatos( uint8_t props,
-												 BleSecurityMode permisoRead,
-												 BleSecurityMode permisoWrite, 
+												 SecureMode_t permisoRead,
+												 SecureMode_t permisoWrite, 
 												 uint8_t tam ) {
 	  asignarPropiedades( props );
 	  asignarPermisos( permisoRead, permisoWrite );
