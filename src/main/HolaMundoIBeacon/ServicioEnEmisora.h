@@ -48,17 +48,17 @@ class ServicioEnEmisora {
 public:
 
 
-  // --------------------------------------------------------
-  // --------------------------------------------------------
+// --------------------------------------------------------
+// --------------------------------------------------------
 
-  // .........................................................
-  // .........................................................
-  using CallbackCaracteristicaEscrita = void ( uint16_t conn_handle,
+// .........................................................
+// .........................................................
+using CallbackCaracteristicaEscrita = void ( uint16_t conn_handle,
 											   BLECharacteristic * chr,
 											   uint8_t * data, uint16_t len); 
-  // .........................................................
-  // .........................................................
-  class Caracteristica {
+// .........................................................
+// .........................................................
+class Caracteristica {
   private:
 	uint8_t uuidCaracteristica[16] = { // el uuid se copia aquí (al revés) a partir de un string-c
 	  // least signficant byte, el primero
@@ -78,11 +78,11 @@ public:
 	// .........................................................
 	// .........................................................
   /**
-   * Cosntructor Caracteristica
-   * nombreCaracteristica: texto -> constructor()
-   * 
-   * @param texto nombreCaracteristica
-   */
+  * Cosntructor Caracteristica
+  * nombreCaracteristica: texto -> constructor()
+  * 
+  * @param texto nombreCaracteristica
+  */
 	Caracteristica( const char * nombreCaracteristica_ )
 	  :
 	  laCaracteristica( stringAUint8AlReves( nombreCaracteristica_, &uuidCaracteristica[0], 16 ) )
@@ -93,15 +93,15 @@ public:
 	// .........................................................
 	// .........................................................
   /**
-   * Cosntructor Caracteristica
-   * nombreCaracteristica: texto, props: N, permisoRead: SecureMode_t, permisoWrite: SecureMode_t, tam: N -> constructor()
-   * 
-   * @param nombreCaracteristica texto 
-   * @param props N
-   * @param permisoRead SecureMode_t
-   * @param permisoWrite SecureMode_t
-   * @param tam N
-   */
+  * Cosntructor Caracteristica
+  * nombreCaracteristica: texto, props: N, permisoRead: SecureMode_t, permisoWrite: SecureMode_t, tam: N -> constructor()
+  * 
+  * @param nombreCaracteristica tipo texto 
+  * @param props tipo natural
+  * @param permisoRead tipo SecureMode_t
+  * @param permisoWrite tipo SecureMode_t
+  * @param tam tipo natural
+  */
 	Caracteristica( const char * nombreCaracteristica_ ,
 					uint8_t props,
 					SecureMode_t permisoRead,
@@ -118,10 +118,10 @@ public:
 	// CHR_PROPS_WRITE , CHR_PROPS_READ ,  CHR_PROPS_NOTIFY 
 	// .........................................................
   /**
-   * props: n -> asignarPropiedades()
-   * 
-   * @param props N
-   */
+  * props: n -> asignarPropiedades()
+  * 
+  * @param props tipo natural
+  */
 	void asignarPropiedades ( uint8_t props ) {
 	  // no puedo escribir AUN si el constructor llama a esto: Serial.println( " laCaracteristica.setProperties( props ); ");
 	  (*this).laCaracteristica.setProperties( props );
@@ -131,11 +131,11 @@ public:
 	// SecureMode_t::SECMODE_OPEN  , SecureMode_t::SECMODE_NO_ACCESS
 	// .........................................................
   /**
-   * permisoRead: SecureMode_t, permisoWrite: SecureMode_t -> asignarPermisos()
-   * 
-   * @param permisoRead SecureMode_t
-   * @param permisoWrite SecureMode_t
-   */
+  * permisoRead: SecureMode_t, permisoWrite: SecureMode_t -> asignarPermisos()
+  * 
+  * @param permisoRead SecureMode_t
+  * @param permisoWrite SecureMode_t
+  */
 	void asignarPermisos( SecureMode_t permisoRead, SecureMode_t permisoWrite ) {
 	  // no puedo escribir AUN si el constructor llama a esto: Serial.println( "laCaracteristica.setPermission( permisoRead, permisoWrite ); " );
 	  (*this).laCaracteristica.setPermission( permisoRead, permisoWrite );
@@ -144,10 +144,10 @@ public:
 	// .........................................................
 	// .........................................................
   /**
-   * tam: N -> asignarTamanyoDatos()
-   * 
-   * @param tam asigna un tamaño para los datos
-   */
+  * tam: N -> asignarTamanyoDatos()
+  * 
+  * @param tam asigna un tamaño para los datos
+  */
 	void asignarTamanyoDatos( uint8_t tam ) {
 	  // no puedo escribir AUN si el constructor llama a esto: Serial.print( " (*this).laCaracteristica.setFixedLen( tam = " );
 	  // no puedo escribir AUN si el constructor llama a esto: Serial.println( tam );
@@ -180,10 +180,11 @@ public:
 	// .........................................................
 	// .........................................................
   /**
-   * str: texto -> escribirDatos() -> r: N
-   * 
-   * @param str de tipo texto
-   * @param r 
+  * str: texto -> escribirDatos() -> r: N
+  * 
+  * @param str de tipo texto
+  * 
+  * @returns r de tipo natural 
   */
 	uint16_t escribirDatos( const char * str ) {
 	  // Serial.print( " return (*this).laCaracteristica.write( str  = " );
@@ -199,10 +200,11 @@ public:
 	// .........................................................
 	// .........................................................
   /**
-   * str: texto -> notificarDatos() -> r: N
-   * 
-   * @param str de tipo texto
-   * @param r
+  * str: texto -> notificarDatos() -> r: N
+  * 
+  * @param str de tipo texto
+  *
+  * @returns r de tipo natural 
   */
 	uint16_t notificarDatos( const char * str ) {
 	  
@@ -220,7 +222,7 @@ public:
 	// .........................................................
 	// .........................................................
   /**
-   * activar()
+  * activar()
   */
 	void activar() {
 	  err_t error = (*this).laCaracteristica.begin();
@@ -228,7 +230,7 @@ public:
 	  Globales::elPuerto.escribir(  error );
 	} // ()
 
-  }; // class Caracteristica
+}; // class Caracteristica
   
   // --------------------------------------------------------
   // --------------------------------------------------------
@@ -257,10 +259,11 @@ public:
   // .........................................................
   // .........................................................
   /**
-   * Cosntructor de servicioEmisora()
-   * nombreServicio_: texto -> constructor()
-   * 
-   */
+  * Cosntructor de servicioEmisora()
+  * nombreServicio_: texto -> constructor()
+  * 
+  * @param nombreServicio_ de tipo texto
+  */
   ServicioEnEmisora( const char * nombreServicio_ )
 	:
 	elServicio( stringAUint8AlReves( nombreServicio_, &uuidServicio[0], 16 ) )
@@ -271,9 +274,9 @@ public:
   // .........................................................
   // .........................................................
   /**
-   * escribeUUID()
-   * 
-   */
+  * escribeUUID()
+  * 
+  */
   void escribeUUID() {
 	Serial.println ( "**********" );
 	for (int i=0; i<= 15; i++) {
@@ -285,19 +288,19 @@ public:
   // .........................................................
   // .........................................................
   /**
-   * clase caracteristica -> anyadirCaracteristica()
-   * 
-   * @param Caracteristica, le pasamos la clase antes definida llamada Caracteristica
+  * clase caracteristica -> anyadirCaracteristica()
+  * 
+  * @param Caracteristica, le pasamos la clase antes definida llamada Caracteristica
   */
   void anyadirCaracteristica( Caracteristica & car ) {
-	(*this).lasCaracteristicas.push_back( & car );
+	  (*this).lasCaracteristicas.push_back( & car );
   } // ()
 
   // .........................................................
   // .........................................................
   /**
-   * activarServicio()
-   * 
+  * activarServicio()
+  * 
   */
   void activarServicio( ) {
 	// entiendo que al llegar aquí ya ha sido configurado

@@ -1,10 +1,10 @@
 
 // -*- mode: c++ -*-
 
-// ----------------------------------------------------------
-// Jordi Bataller i Mascarell
-// 2019-07-07
-// ----------------------------------------------------------
+// --------------------------------------------------------------
+// Juan Ferrera Sala
+// 2021-09-23
+// --------------------------------------------------------------
 
 #ifndef PUERTO_SERIE_H_INCLUIDO
 #define PUERTO_SERIE_H_INCLUIDO
@@ -14,43 +14,43 @@
 class PuertoSerie  {
 
 public:
-  // .........................................................
-  // .........................................................
-  /**
-   * Cosntructor de PuertoSerie
-   * baudios: N -> constructor()
-   * 
-  */
-  PuertoSerie (long baudios) {
+// .........................................................
+// .........................................................
+/**
+* Cosntructor de PuertoSerie
+* baudios: N -> constructor()
+* 
+*/
+PuertoSerie (long baudios) {
 	Serial.begin( baudios );
 	// mejor no poner esto aquí: while ( !Serial ) delay(10);   
-  } // ()
+} // ()
 
-  // .........................................................
-  // .........................................................
-  /**
-   * esperarDisponible()
-   * 
-   */
-  void esperarDisponible() {
+// .........................................................
+// .........................................................
+/**
+* esperarDisponible()
+* 
+*/
+void esperarDisponible() {
 
 	while ( !Serial ) {
 	  delay(10);   
 	}
 
-  } // ()
+} // ()
 
-  // .........................................................
-  // .........................................................
-  /**
-   * mensaje: Texto -> escribir()
-   * 
-   * @param texto mensaje a escribir por pantalla
-   */
+// .........................................................
+// .........................................................
+/**
+* mensaje: Texto -> escribir()
+* 
+* @param texto mensaje a escribir por pantalla
+*/
   template<typename T>
-  void escribir (T mensaje) {
+void escribir (T mensaje) {
 	Serial.print( mensaje );
-  } // ()
+} // ()
   
 }; // class PuertoSerie
 

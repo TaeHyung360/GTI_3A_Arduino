@@ -2,8 +2,8 @@
 
 // --------------------------------------------------------------
 //
-// Jordi Bataller i Mascarell
-// 2019-07-07
+// Juan Ferrera Sala
+// 2021-09-23
 //
 // --------------------------------------------------------------
 
@@ -70,7 +70,7 @@ void setup() {
   // 
   // 
   inicializarPlaquita();
-
+  
   // Suspend Loop() to save power
   // suspendLoop();
 
@@ -179,9 +179,9 @@ void loop () {
   // 
   // 
   // 
-  elPuerto.escribir( "---- loop(): acaba **** " );
-  elPuerto.escribir( cont );
-  elPuerto.escribir( "\n" );
+    elPuerto.escribir( "---- loop(): acaba **** " );
+    elPuerto.escribir( cont );
+    elPuerto.escribir( "\n" );
   
 } // loop ()
 // --------------------------------------------------------------

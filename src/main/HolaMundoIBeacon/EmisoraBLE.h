@@ -1,8 +1,8 @@
 // -*- mode: c++ -*-
 
 // ----------------------------------------------------------
-// Jordi Bataller i Mascarell
-// 2019-07-07
+// Juan Ferrera Sala
+// 2021-09-23
 // ----------------------------------------------------------
 #ifndef EMISORA_H_INCLUIDO
 #define EMISORA_H_INCLUIDO
@@ -81,7 +81,7 @@ public:
   // .........................................................
   /**
   * encenderEmisora()
-  * 
+  * inicializamos la emision
   */
   void encenderEmisora() {
 	// Serial.println ( "Bluefruit.begin() " );
@@ -93,7 +93,14 @@ public:
 
   // .........................................................
   // .........................................................
-  // Establece los callback para establecer yfinalizar conexion
+  // Establece los callback para establecer y finalizar conexion
+  /**
+  * callbackConexionestablecida, callbackConexionTerminada -> encenderEmisora()
+  * 
+  * @param callbackConexionestablecida de tipo callback
+  * @param callbackConexionTerminada de tipo callback
+  *
+  */
   void encenderEmisora( CallbackConexionEstablecida cbce,
 						CallbackConexionTerminada cbct ) {
 
@@ -129,11 +136,13 @@ public:
   // .........................................................
   // .........................................................
   /**
-  * beaconUUID: texto, major: texto, rssi: texto -> emitirAnuncioBeacon()
+  * beaconUUID: texto, major: N, minor: N, rssi: texto -> emitirAnuncioBeacon()
   * 
   * @param beaconUUID de tipo texto, indica la UUID del beacon para indentificarlo
-  * @param major de tipo texto
+  * @param major de tipo natural
+  * @param minor de tipo natural es por donde mas adelante se va a enviar el valor de la medida
   * @param rssi de tipo texto
+  * estos datos esta mucho mejor explicados con el ejemplo de la trama
   */
   void emitirAnuncioIBeacon( uint8_t * beaconUUID, int16_t major, int16_t minor, uint8_t rssi ) {
 
@@ -296,7 +305,8 @@ public:
   * servicioEnEmisora -> anyadirServicio() -> VoF
   * 
   * @param clase servicioEnEmisora
-  * @param devulve VoF 
+  *
+  * @returns VoF 
   */
   bool anyadirServicio( ServicioEnEmisora & servicio ) {
 
@@ -321,7 +331,8 @@ public:
   * servicioEnEmisora -> anyadirServicioConSusCaracteristicas() -> VoF
   * 
   * @param clase servicioEnEmisora
-  * @param devulve VoF 
+  *
+  * @returns VoF  
   */
   bool anyadirServicioConSusCaracteristicas( ServicioEnEmisora & servicio ) { 
 	return (*this).anyadirServicio( servicio );
@@ -333,7 +344,8 @@ public:
   * 
   * @param clase servicioEnEmisora
   * @param texto
-  * @param devulve VoF 
+  *
+  * @returns VoF 
   */
   template <typename ... T>
   bool anyadirServicioConSusCaracteristicas( ServicioEnEmisora & servicio,
@@ -351,7 +363,8 @@ public:
   * 
   * @param clase servicioEnEmisora
   * @param texto
-  * @param devulve VoF 
+  *
+  * @returns VoF 
   */
   template <typename ... T>
   bool anyadirServicioConSusCaracteristicasYActivar( ServicioEnEmisora & servicio,
