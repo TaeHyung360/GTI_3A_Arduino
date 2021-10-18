@@ -1,8 +1,10 @@
 // -*- mode: c++ -*-
 
 // --------------------------------------------------------------
-// Juan Ferrera Sala
-// 2021-09-23
+// Nombre archivo: Publicador.h
+// Autor: Juan Ferrera Sala
+// Fecha: 2021-09-23
+// Descripcion: Se encarga de publicar los Beacons
 // --------------------------------------------------------------
 
 #ifndef PUBLICADOR_H_INCLUIDO

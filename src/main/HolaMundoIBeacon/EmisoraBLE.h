@@ -1,9 +1,11 @@
 // -*- mode: c++ -*-
 
-// ----------------------------------------------------------
-// Juan Ferrera Sala
-// 2021-09-23
-// ----------------------------------------------------------
+// --------------------------------------------------------------
+// Nombre archivo: EmisoraBLE.h
+// Autor: Juan Ferrera Sala
+// Fecha: 2021-09-23
+// Descripcion: Se encarga de controla el BLE
+// --------------------------------------------------------------
 #ifndef EMISORA_H_INCLUIDO
 #define EMISORA_H_INCLUIDO
 

@@ -1,10 +1,10 @@
 // -*-c++-*-
 
 // --------------------------------------------------------------
-//
-// Juan Ferrera Sala
-// 2021-09-23
-//
+// Nombre archivo: HolaMundoIBeacon.h
+// Autor: Juan Ferrera Sala
+// Fecha: 2021-09-23
+// Descripcion: Programa principal de arduino 
 // --------------------------------------------------------------
 
 // https://learn.sparkfun.com/tutorials/nrf52840-development-with-arduino-and-circuitpython

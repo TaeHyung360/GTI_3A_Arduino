@@ -2,8 +2,10 @@
 // -*- mode: c++ -*-
 
 // --------------------------------------------------------------
-// Juan Ferrera Sala
-// 2021-09-23
+// Nombre archivo: PuertoSerie.h
+// Autor: Juan Ferrera Sala
+// Fecha: 2021-09-23
+// Descripcion: Imprime por la consola de arduino
 // --------------------------------------------------------------
 
 #ifndef PUERTO_SERIE_H_INCLUIDO

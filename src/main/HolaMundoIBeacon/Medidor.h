@@ -1,8 +1,10 @@
 // -*- mode: c++ -*-
 
 // --------------------------------------------------------------
-// Juan Ferrera Sala
-// 2021-09-23
+// Nombre archivo: Medidor.h
+// Autor: Juan Ferrera Sala
+// Fecha: 2021-09-23
+// Descripcion: Programa que toma las medidas para enviar
 // --------------------------------------------------------------
 #ifndef MEDIDOR_H_INCLUIDO
 #define MEDIDOR_H_INCLUIDO

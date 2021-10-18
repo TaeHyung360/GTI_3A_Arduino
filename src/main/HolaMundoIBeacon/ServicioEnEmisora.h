@@ -1,9 +1,11 @@
 // -*- mode: c++ -*-
 
-// ----------------------------------------------------------
-// Jordi Bataller i Mascarell
-// 2019-07-17
-// ----------------------------------------------------------
+// --------------------------------------------------------------
+// Nombre archivo: ServidorEnEmisora.h
+// Autor: Juan Ferrera Sala
+// Fecha: 2021-09-23
+// Descripcion: Emisora BLE utiliza servicioEmisora.h para caracteristicas de la emisora
+// --------------------------------------------------------------
 #ifndef SERVICIO_EMISORA_H_INCLUIDO
 #define SERVICIO_EMISORA_H_INCLUIDO
 
